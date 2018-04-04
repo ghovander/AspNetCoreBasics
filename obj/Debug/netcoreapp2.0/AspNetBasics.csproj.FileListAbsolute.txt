@@ -1,0 +1,10 @@
+C:\GIT\AspNetBasics\bin\Debug\netcoreapp2.0\AspNetBasics.deps.json
+C:\GIT\AspNetBasics\bin\Debug\netcoreapp2.0\AspNetBasics.runtimeconfig.json
+C:\GIT\AspNetBasics\bin\Debug\netcoreapp2.0\AspNetBasics.runtimeconfig.dev.json
+C:\GIT\AspNetBasics\bin\Debug\netcoreapp2.0\AspNetBasics.dll
+C:\GIT\AspNetBasics\bin\Debug\netcoreapp2.0\AspNetBasics.pdb
+C:\GIT\AspNetBasics\obj\Debug\netcoreapp2.0\AspNetBasics.csproj.CoreCompileInputs.cache
+C:\GIT\AspNetBasics\obj\Debug\netcoreapp2.0\AspNetBasics.AssemblyInfoInputs.cache
+C:\GIT\AspNetBasics\obj\Debug\netcoreapp2.0\AspNetBasics.AssemblyInfo.cs
+C:\GIT\AspNetBasics\obj\Debug\netcoreapp2.0\AspNetBasics.dll
+C:\GIT\AspNetBasics\obj\Debug\netcoreapp2.0\AspNetBasics.pdb

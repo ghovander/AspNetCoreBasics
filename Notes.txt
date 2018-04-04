@@ -1,0 +1,74 @@
+Section 1 - Lecture 6
+1) Install .NET Core by navigating to https://www.microsoft.com/net/download/windows
+2) Command Palet: Shift + Control + P
+3) Select "Install Extensions"
+4) Install "Angular v5 Snippets" - Helps Create Angular Component or Service using a snippet
+5) Install "ASP.NET Helper"
+6) Install "ASP.NET Core Snippets"
+7) Install "Auto Import" - Auto-generates import statements for TypeScript and import classes
+8) Install "Beautify" - Formats javascript and html code
+9) Install "C#" - Syntax Highlighting and Code Completion
+10) Install "C# Extensions" - Syntax Highlighting Completion
+11) Install "Docker" - Syntax Highlighting for Docker files
+12) Install "mssql" - Allows for connection to sql server database to write queries
+13) Install "REST Client" - Call restful endpoints
+14) Install Node JS at https://nodejs.org/en/
+15) Execute command "sudo npm install -g dotnet new angular"
+16) Install SQL Server Express
+Database Details:
+Instance Name - SQLEXPRESS
+SQL Administrators - NA-IDM\217216X718010
+Features Installed - SQLENGINE
+Version - 14.0.1000.169, RTM
+Connection String - Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;
+SQL Server Install Log Folder - C:\Program Files\Microsoft SQL Server\140\Setup Bootstrap\Log\20180403_215545
+Installation Media Folder - C:\SQLServer2017Media\Express_ENU
+Installation Resources Folder - C:\Program Files\Microsoft SQL Server\140\SSEI\Resources
+User: sa
+Pass: MyComplexPassword!234
+17) Install SQL Server Management Studio
+18) Execute the following command in SSMS 
+ALTER LOGIN sa ENABLE ;  
+GO  
+ALTER LOGIN sa WITH PASSWORD = 'MyComplexPassword!234' ;  
+GO  
+
+Section 1 - Lecture 7
+1) Docker - Automates the deployment of applications
+2) Packages the App + Dependencies + Configs into an image and then deploys them into a container on a server
+
+Section 1 - Lecture 8
+1) Execute command "dotnet new angular" in project directory
+2) Execute command "npm install"
+3) Run project by executing command "dotnet run" in the VS Code terminal or in the linux terminal
+4) Stop process with Control + C
+5) Open Visual Studio Code from Command Prompt with "Code .". First, navigate to the command palet and type in command. Select the option that adds code to path.
+6) Navigate to the terminal in VS Code by using hotkey combination "Ctrl + `"
+
+Section 1 - Lecture 9
+1) ClientApp folder - Angular client-side code
+2) wwwroot - public assets for applications. This is the only folder whose contents are whitelisted.
+2a) Includes a file called main-client.js which is a compilation of all angular applications in javascript.
+2b) Includes a file called vendor.js which is a compilation of all third-party libraries.
+2c) Includes a file called vendor.cs which is a compilation of all third-party css style sheets.
+3) appsettings.json - stores application settings
+4) web.config - used for configuration of Installation
+5) .csproj - used for opening project in visual Studio
+6) webpack.config.js - a bundler for client-side code. It compiles and minifies  all javascript and style sheet files.
+7) webpack.config.vendor.js - Compiles all third-party libraries.
+
+Section 1 - Lecture 10
+1) Kestrel - In-process HTTP server implementation for cross-platform application support running with ASP.NET Core.
+2) Main Method -  BuildWebHost(args).Run(); tells Kestrel to start listening for requests on port 5000 of localhost.
+3) Dependency Injection - Registers default implemenation for all of the interfaces being used through services.AddTransient<Interface,Implementation>(); in ConfigureServices method found in class Startup.cs.
+4) Request Processing Pipeline - request comes to middleware and the middleware determines if it wants to take action on the request.
+Now we can determine what middleware we want to utilize, so that we can improve the performance of our application.
+5) In the Configure method in the Startup class, if you are the a development environment "UseDeveloperExceptionPage" will render an exception 
+page with all the appropriate details for debugging if an invalid request comes in. "UseWebpackDevMiddleware" allows for client-side changes to be automatically pushed to the browser.
+"UseStaticFiles" allows for the application to serve static files to the end-user. "UseMvc" forwards request to an action in our controller.
+
+Section 1 - Lecture 11
+1) In .NET Core there is a concept of the following environments: Development, Staging, Production
+2) Change environment by executing the command "set ASPNETCORE_ENVIRONMENT="Development"". Ensure that this is added at the system level as an environment variable.
+
+
