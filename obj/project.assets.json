@@ -12532,6 +12532,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "Microsoft.AspNetCore.All >= 2.0.6",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 2.0.2",
       "Microsoft.NETCore.App >= 2.0.0"
     ]
   },
@@ -12542,11 +12543,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\git\\AspNetBasics\\AspNetBasics.csproj",
+      "projectUniqueName": "C:\\GIT\\AspNetBasics\\AspNetBasics.csproj",
       "projectName": "AspNetBasics",
-      "projectPath": "C:\\git\\AspNetBasics\\AspNetBasics.csproj",
+      "projectPath": "C:\\GIT\\AspNetBasics\\AspNetBasics.csproj",
       "packagesPath": "C:\\Users\\217216X718010\\.nuget\\packages\\",
-      "outputPath": "C:\\git\\AspNetBasics\\obj\\",
+      "outputPath": "C:\\GIT\\AspNetBasics\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12579,6 +12580,10 @@
           "Microsoft.AspNetCore.All": {
             "target": "Package",
             "version": "[2.0.6, )"
+          },
+          "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "[2.0.2, )"
           },
           "Microsoft.NETCore.App": {
             "target": "Package",

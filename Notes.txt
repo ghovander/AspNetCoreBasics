@@ -13,7 +13,7 @@ Section 1 - Lecture 6
 12) Install "mssql" - Allows for connection to sql server database to write queries
 13) Install "REST Client" - Call restful endpoints
 14) Install Node JS at https://nodejs.org/en/
-15) Execute command "sudo npm install -g dotnet new angular"
+15) Execute command "npm install -g dotnet new angular"
 16) Install SQL Server Express
 Database Details:
 Instance Name - SQLEXPRESS
@@ -71,4 +71,35 @@ Section 1 - Lecture 11
 1) In .NET Core there is a concept of the following environments: Development, Staging, Production
 2) Change environment by executing the command "set ASPNETCORE_ENVIRONMENT="Development"". Ensure that this is added at the system level as an environment variable.
 
+Section 1 -  Lecture 12
+1) Add .NET Watch as a csproj reference:
+ <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="2.0.0-preview2-final" />
+ </ItemGroup>
+2) Execute the command "dotnet restore" - re-pulls nuget Packages
+3) Execute the command "dotnet watch run" - this allows dynamic server side compiling
 
+Section 1 - Lecture 13
+1) Shift + Ctrl + D = Takes users to debug panel in VS Code
+
+Section 1 - Lecture 14
+1) Shift + Ctrl + G = Takes users to GIT panel in VS Code
+
+Section 1 - Lecture 15
+1) Proper Requirements:
+2) Use Cases - Show interactions between user and system
+3) Dependency Graph - Shows dependent functionality, so one knows what to build first
+
+Section 1 - Lecture 16
+1) Add nuget package for entity framework core for sql server by executing command "dotnet add package Microsoft.EntityFrameworkCore.SqlServer"
+2) Add nuget package for entity framework CLI by adding the following reference to the csproj:
+<ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0-preview2-final" />
+</ItemGroup>
+3) Perform the following command "dotnet ef migrations --help" to view different entity framework commands
+
+Section 3 - Lecture 33
+1) Execute command "npm install @angular/cli@latest -g"
+2) Create new angular project with angular cli by executing the command "ng new hello-world"
+3) Move the .angular-cli.json into the project directory
+4) Alter the the value for the root key to "ClientApp" because that is where the Angular app resides
