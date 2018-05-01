@@ -98,8 +98,72 @@ Section 1 - Lecture 16
 </ItemGroup>
 3) Perform the following command "dotnet ef migrations --help" to view different entity framework commands
 
+Section 2 - Lecture 20
+1) In EF6, to create a foreign key, one must create a property that references the table. The property name should be the same as the data type. The foreign key
+will have the same name as the previous property and the name of the primary key. Entity framework will then generate this constraint.
+
+Section 2 - Lecture 21
+1) Execute the command "dotnet add package Microsoft.EntityFrameworkCore.SqlServer"
+2) To add CLI tools for Entity Framework add the following to your .csproj file:
+<ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0-preview2-final" />
+</ItemGroup>
+
+Section 2 - Lecture 22
+1) Create a DbContext class
+2) Register the class for dependency injection - services.AddDbContext<VegaDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
+
+Section 2 - Lecture 23
+1) To set the connection string, open appsettings.json and insert the following:
+  "ConnectionStrings":{
+    "Default": "server=localhost\\SQLEXPRESS;database=Vega;user id=sa;password=MyComplexPassword!234"
+  },
+2) appsettings.json is the new config file in ASP.NET Core. There is no web.config file.
+3) Configuration.GetConnectionString("Default") will look in the ConnectionStrings element for the Name "Default" value.
+
+Section 2 - Lecture 24
+1) Add package by executing command "dotnet add package Microsoft.EntityFrameworkCore.Design"
+2) Make sure you restore all dependencies with "dotnet restore"
+3) Create a migration by executing the command "dotnet ef migrations add InitialModel"
+4) Need to add a DBSet to EF DbContext in order for Up/Down Migration to contain data
+5) Remove the latest migration by executing the command "dotnet ef migrations remove"
+6) Entity Framework looks at the ASP.NET Core dependency injection for the correct DB to connect to in order to verify that the migration was not applied yet, so that it
+can proceed with removing those items from the file.
+7) Add migrations to the database by executing the command "dotnet ef database update"
+
+Section 2 - Lecture 25
+1) By executing the command "dotnet ef database update MigrationName", you can downgrade the database to a specific migration.
+2) After downgrading the database, you can then remove the unapplied migrations by executing the command "dotnet ef migrations remove".
+3) Add constraints by adding attributes to the model properties and then execute "dotnet ef migrations add ApplyConstraints"
+
+Section 2 - Lecture 26
+1) To seed the database with code-first migrations execute the command "dotnet ef migrations add SeedDatabase"
+2) From this point, you can modify the migration script
+
+Section 3 - Lecture 27
+1) In ASP.NET Core you only have 1 controller class. In MVC5, you have two types of controllers: 1 for returning views and another for APIs
+
+Section 3 - Lecture 29
+1) The model classes in the solution are known as "implementation detail" within our application domain. We need a contract/interfact at our
+"application boundary" to interact with external components.
+2) These "application boundary" classes will be taken as an input into the controller and the output will be serialized.
+
+Section 3 - Lecture 30
+1) Map domain classes to API resources
+2) AutoMapper - Convention-based mapping tool for mapping two different objects together.
+3) Install by executing the command "dotnet add package AutoMapper"
+4) Install by executing the command "dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection --version 1.2.0"
+5) Add dependency injection for AutoMapper by adding "" to ConfigureServices method
+6) AutoMapper needs a mapping profile to map properties between objects
+
 Section 3 - Lecture 33
 1) Execute command "npm install @angular/cli@latest -g"
 2) Create new angular project with angular cli by executing the command "ng new hello-world"
 3) Move the .angular-cli.json into the project directory
 4) Alter the the value for the root key to "ClientApp" because that is where the Angular app resides
+5) Install the Angular CLI as a dev dependency by executing the command "npm install @angular/cli@latest --save-dev"
+6) Generate a new Angular component by executing the command "ng g component vehicle-form --module=app.module" from the components folder
+
+Section 3 - Lecture 34
+1) 
+
