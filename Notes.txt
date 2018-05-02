@@ -165,5 +165,12 @@ Section 3 - Lecture 33
 6) Generate a new Angular component by executing the command "ng g component vehicle-form --module=app.module" from the components folder
 
 Section 3 - Lecture 34
-1) 
+1) How to create a component manually:
+1a) Create a folder in "ClientApp\app\components" and create a typescript file with an associated html file.
+1b) Register the component in app.module.ts and add the component to the declarations and RouterModule.
+2) How to create a component automatically:
+2a) Get the latest cli by executing command "npm install @angular/cli@latest -g"
+2b) Create new project by executing "ng new hello-world"
+2c) Copy the Angular CLI json by navigating to the project destination and executing the following command "cp .angular-cli.json ../<Project_Name>"
+
 

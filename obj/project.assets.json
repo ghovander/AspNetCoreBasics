@@ -12612,11 +12612,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GIT\\AspNetBasics\\AspNetBasics.csproj",
+      "projectUniqueName": "C:\\git\\AspNetBasics\\AspNetBasics.csproj",
       "projectName": "AspNetBasics",
-      "projectPath": "C:\\GIT\\AspNetBasics\\AspNetBasics.csproj",
+      "projectPath": "C:\\git\\AspNetBasics\\AspNetBasics.csproj",
       "packagesPath": "C:\\Users\\217216X718010\\.nuget\\packages\\",
-      "outputPath": "C:\\GIT\\AspNetBasics\\obj\\",
+      "outputPath": "C:\\git\\AspNetBasics\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
