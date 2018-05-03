@@ -172,5 +172,19 @@ Section 3 - Lecture 34
 2a) Get the latest cli by executing command "npm install @angular/cli@latest -g"
 2b) Create new project by executing "ng new hello-world"
 2c) Copy the Angular CLI json by navigating to the project destination and executing the following command "cp .angular-cli.json ../<Project_Name>"
+2d) In the Angular CLI json file, change the root value to the root folder that contains app and its components.
+2e) Add Angular CLI as a dev dependency by executing the following command "npm install @angular/cli@latest --save-dev"
+2f) To add a new component, execute the following command "ng g component vehicle-form" from the components folder.
+
+Section 3 - Lecture 35
+1) Using bootstrap forms: https://getbootstrap.com/css
+1a) Zen Coding: Shorthand for HTML markup
+1b) '>' = operator for creating element hierarchy
+1c) '.' = operator for denoting a css class
+1d) '+' = operator for adding another element at the same level
+1e) '[]' = operator for adding attributes to element
+1f) '{}' = operator for adding element text
+1f) Change "emmet.triggerExpansionOnTab": true in the settings.json file in vscode
+1g) Hit tab to generate html code
 
 
