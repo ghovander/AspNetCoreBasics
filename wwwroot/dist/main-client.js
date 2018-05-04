@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "39f158537d45ae4043cb"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "eef5f74ddf362451cea1"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -1620,10 +1620,10 @@ function getBaseUrl() {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModuleShared; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_app_app_component__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_navmenu_navmenu_component__ = __webpack_require__(17);
@@ -1654,7 +1654,7 @@ var AppModuleShared = (function () {
     function AppModuleShared() {
     }
     AppModuleShared = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__angular_core__["NgModule"])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_5__components_app_app_component__["a" /* AppComponent */],
                 __WEBPACK_IMPORTED_MODULE_6__components_navmenu_navmenu_component__["a" /* NavMenuComponent */],
@@ -1664,9 +1664,9 @@ var AppModuleShared = (function () {
                 __WEBPACK_IMPORTED_MODULE_10__components_vehicle_form_vehicle_form_component__["a" /* VehicleFormComponent */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
-                __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormsModule"],
+                __WEBPACK_IMPORTED_MODULE_0__angular_common__["CommonModule"],
+                __WEBPACK_IMPORTED_MODULE_2__angular_http__["HttpModule"],
+                __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormsModule"],
                 __WEBPACK_IMPORTED_MODULE_4__angular_router__["RouterModule"].forRoot([
                     { path: '', redirectTo: 'home', pathMatch: 'full' },
                     { path: 'vehicles/new', component: __WEBPACK_IMPORTED_MODULE_10__components_vehicle_form_vehicle_form_component__["a" /* VehicleFormComponent */] },
@@ -1839,13 +1839,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var VehicleFormComponent = (function () {
     function VehicleFormComponent(makeService) {
         this.makeService = makeService;
+        this.makes = [];
+        this.models = [];
+        this.vehicle = {};
     }
     VehicleFormComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.makeService.getMakes().subscribe(function (makes) {
-            _this.makes = makes;
-            console.log("MAKES", _this.makes);
+            return _this.makes = makes;
         });
+    };
+    VehicleFormComponent.prototype.onMakeChange = function () {
+        var _this = this;
+        var selectedMake = this.makes.find(function (m) { return m.id == _this.vehicle.make; });
+        this.models = selectedMake ? selectedMake.models : [];
     };
     VehicleFormComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -2262,7 +2269,7 @@ module.exports = "<div class='main-nav'>\r\n    <div class='navbar navbar-invers
 /* 30 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>New Vehicle</h1>\n<form action=\"\">\n  <div class=\"form-group\">\n    <label for=\"make\">Make</label>\n    <select id=\"make\" class=\"form-control\">\n      <option value=\"\"></option>\n      <option *ngFor=\"let m of makes\" value=\"{{m.id}}\">{{m.name}}</option>\n    </select>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"model\">Model</label>\n    <select name=\"\" id=\"model\" class=\"form-control\"></select>\n  </div>\n</form>";
+module.exports = "<h1>New Vehicle</h1>\n<form action=\"\">\n  <div class=\"form-group\">\n    <label for=\"make\">Make</label>\n    <select id=\"make\" class=\"form-control\" (change)=\"onMakeChange()\" [(ngModel)]=\"vehicle.make\" name=\"make\">\n      <option value=\"\"></option>\n      <option *ngFor=\"let m of makes\" value=\"{{m.id}}\">{{m.name}}</option>\n    </select>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"model\">Model</label>\n    <select name=\"\" id=\"model\" class=\"form-control\">\n      <option value=\"\"></option>\n      <option *ngFor=\"let m of models\" value=\"{{m.id}}\">{{m.name}}</option>\n    </select>\n  </div>\n</form>";
 
 /***/ }),
 /* 31 */

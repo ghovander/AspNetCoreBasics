@@ -187,4 +187,7 @@ Section 3 - Lecture 35
 1f) Change "emmet.triggerExpansionOnTab": true in the settings.json file in vscode
 1g) Hit tab to generate html code
 
+Section 3 - Lecture 36
+1) Create a folder called services in your Angular "app" folder and execute the command "ng g service make"
+
 
