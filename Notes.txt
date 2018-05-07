@@ -190,4 +190,10 @@ Section 3 - Lecture 35
 Section 3 - Lecture 36
 1) Create a folder called services in your Angular "app" folder and execute the command "ng g service make"
 
+Section 4 - Lecture 48
+1) EF 6 has complex types which allow the properties stored in the object to be inserted as columns in the table that used that object data type.
+2) At the time of recording, EF Core did not have complex type support.
 
+Section 4 - Lecture 49
+1) At the time of recording, EF Core did not support creation of mapping table for many-to-many relationships.
+2) At the time of recording, composite keys are not supported in EF Core. Hence, Fluent API is needed.
