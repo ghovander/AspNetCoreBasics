@@ -197,3 +197,10 @@ Section 4 - Lecture 48
 Section 4 - Lecture 49
 1) At the time of recording, EF Core did not support creation of mapping table for many-to-many relationships.
 2) At the time of recording, composite keys are not supported in EF Core. Hence, Fluent API is needed.
+
+Section 4 - Lecture 51
+1) Use postman chrome extension to test APIs
+2) When performing a request you need to tell ASP.NET where to find the data for initializing the members of the complex object. Place [FromBody] before the data type of the parameter.
+3) API resources should be exposed, nothing more. Malicious users can mess up business logic by posting to properties in domain model.
+4) From a service perspective, the traffic should be regulated, so you do not fall victim to Over Posting Attacks.
+5) Different users should be created in order to use different features of the service.
