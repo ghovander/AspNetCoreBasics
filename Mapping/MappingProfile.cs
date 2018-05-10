@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using System.Linq;
 using AspNetBasics.Controllers.Resources;
 using AspNetBasics.Models;
@@ -13,7 +14,9 @@ namespace AspNetBasics.Mapping
             CreateMap<Make, MakeResource>();
             CreateMap<Model, ModelResource>();
             CreateMap<Feature, FeatureResource>();
-
+            CreateMap<Vehicle, VehicleResource>()
+                .ForMember(vr => vr.Contact, opt => opt.MapFrom(v => new ContactResource{Name = v.ContactName,Email = v.ContactEmail,Phone = v.ContactPhone}))
+                .ForMember(vr => vr.Features, opt => opt.MapFrom(v => v.Features.Select(vf => vf.FeatureId)));
             //API Resource to Domain
             CreateMap<VehicleResource, Vehicle>()
                 .ForMember(v => v.ContactName, opt => opt.MapFrom(vr => vr.Contact.Name))

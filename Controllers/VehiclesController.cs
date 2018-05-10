@@ -1,5 +1,8 @@
+using System;
+using System.Threading.Tasks;
 using AspNetBasics.Controllers.Resources;
 using AspNetBasics.Models;
+using AspNetBasics.Persistance;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,16 +12,35 @@ namespace AspNetBasics.Controllers
     public class VehiclesController : Controller
     {
         private readonly IMapper mapper;
-        public VehiclesController(IMapper mapper)
+        private readonly VegaDbContext context;
+        public VehiclesController(IMapper mapper, VegaDbContext context)
         {
+            this.context = context;
             this.mapper = mapper;
         }
 
         [HttpPost]
-        public IActionResult CreateVehicle([FromBody] VehicleResource vehicleResource)
+        public async Task<IActionResult> CreateVehicle([FromBody] VehicleResource vehicleResource)
         {
+            if(!ModelState.IsValid) return BadRequest(ModelState);
+
+            //Validation Logic
+            // var model = await context.Models.FindAsync(vehicleResource.ModelId);
+            // if(model == null)
+            // {
+            //     ModelState.AddModelError("ModelId", "Invalid modelId.");
+            //     return BadRequest(ModelState);
+            // }
+
             var vehicle = mapper.Map<VehicleResource, Vehicle>(vehicleResource);
-            return Ok(vehicle);
+            vehicle.LastUpdate = DateTime.Now;
+
+            context.Vehicles.Add(vehicle);
+            await context.SaveChangesAsync();
+
+            var result = mapper.Map<Vehicle, VehicleResource>(vehicle);
+
+            return Ok(result);
         }
     }
 }
